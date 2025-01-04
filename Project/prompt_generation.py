@@ -70,6 +70,7 @@ def update_function_in_db(rule, function_code):
 
     cursor.execute(update_query, (function_code_json, rule))
     conn.commit()
+    print(f"Updated function_code for rule: {rule}")
     cursor.close()
     conn.close()
 
