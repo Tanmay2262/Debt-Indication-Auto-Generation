@@ -12,7 +12,7 @@ def execute_function_code(data):
             if "function_all" in local_scope:
                 result = local_scope['function_all'](
                     github_token=data["github_token"],
-                    jira_token=data["jira_token"],
+                    azure_token=data["azure_token"],
                     github_username=data["github_username"],
                     rule = data["rule"],
                     jira_base_url = data["jira_base_url"]
@@ -35,7 +35,7 @@ def func_exec(rule):
     query = f'''SELECT 
         data->>'github_token' AS github_token,
         data->>'function_code' AS function_code, 
-        data->>'jira_token' AS jira_token, 
+        data->>'azure_token' AS azure_token, 
         data->>'rule' AS rule, 
         data->>'github_username' AS github_username,
         data->>'jira_base_url' AS jira_base_url
@@ -50,7 +50,7 @@ def func_exec(rule):
 
     if result:
         github_token = result[0]
-        jira_token = result[2]
+        azure_token = result[2]
         function_code = result[1]
         github_username = result[4]
         rule = result[3]
@@ -59,7 +59,7 @@ def func_exec(rule):
         # Save extracted data into a variable
         extracted_data = {
             "github_token": github_token,
-            "jira_token": jira_token,
+            "azure_token": azure_token,
             "function_code": function_code,
             "github_username": github_username,
             "rule": rule,

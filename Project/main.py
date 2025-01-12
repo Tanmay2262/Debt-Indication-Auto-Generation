@@ -6,12 +6,12 @@ import schedule
 def main():
     github_username = input("Enter github username: ")
     github_token = input("Enter Github API Token: ")
-    jira_token = input("Enter Jira API Token: ")
+    azure_token = input("Enter Azure API Token: ")
     scheduler_time = int(input("Enter Scheduler Time: "))
     rule = input("Enter your rule: ")
     jira_base_url = input("Enter your base url: ")
 
-    save_user_data(username=github_username,github_token=github_token, jira_token=jira_token, scheduler_time=scheduler_time, rule=rule, jira_base_url=jira_base_url)
+    save_user_data(username=github_username,github_token=github_token, azure_token=azure_token, scheduler_time=scheduler_time, rule=rule, jira_base_url=jira_base_url)
     generate_function(rule)
     print("Function generated and saved")
 
