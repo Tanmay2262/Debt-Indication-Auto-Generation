@@ -9,12 +9,12 @@ def connect_db():
                  "port": "5432"}
     return psycopg2.connect(**DB_CONFIG)
 
-def save_user_data(username,github_token, jira_token, scheduler_time, rule, jira_base_url, function_code=None):
+def save_user_data(username,github_token, azure_token, scheduler_time, rule, jira_base_url, function_code=None):
 
     data = {
         "github_username": username,
         "github_token": github_token,
-        "jira_token": jira_token,
+        "azure_token": azure_token,
         "scheduler_time": scheduler_time,
         "rule": rule,
         "function_code": function_code,
